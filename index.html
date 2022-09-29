@@ -1,1 +1,44 @@
-てすとだよ
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ</title>
+</head>
+
+<body>
+    <div>
+        あなたの運勢は…
+    </div>
+    <div id="result"></div>
+    <img id="resultImage"></img>
+    <script>
+        const LUCKS = [
+            '大吉',
+            '超・大吉',
+            '超・大吉２',
+            '超・大吉３',
+            '大凶'
+        ]
+
+        const IMAGES = [
+            'https://1.bp.blogspot.com/-FyP0HXysE_w/XxU0hhrCc9I/AAAAAAABaMc/qSGPHr71lNkhXtqEo4frRGOSTW2-VF82gCNcBGAsYHQ/s180-c/hotoke_kongouyasya_myouou.png',
+            'https://1.bp.blogspot.com/-jBi40QARjR0/X-FcxQme4HI/AAAAAAABdE4/5-Go7bIV6XErAq8730nH4kvXprlrupbMQCNcBGAsYHQ/s200/onepiece16_moria.png',
+            'https://1.bp.blogspot.com/-uxIsaN0S5lQ/X-FcrvAAInI/AAAAAAABdD4/6uw_qNUh9dQrG0aUzIExybt84yTEmXOPwCNcBGAsYHQ/s200/onepiece01_luffy.png',
+            'https://1.bp.blogspot.com/-H8YBA_SpxGs/X-Fcu75hh_I/AAAAAAABdEU/WRKUa03ypYor3TwvhziHAnSEcTN4Noq0gCNcBGAsYHQ/s200/onepiece08_franky.png',
+            'https://1.bp.blogspot.com/-WoPLgzbefuw/X-FcxFa-YjI/AAAAAAABdE0/42S9V3wWi400mGKLEiB_pQT-dqTKT28kwCNcBGAsYHQ/s200/onepiece14_enel.png'
+        ]
+
+        let resultNum = Math.floor(Math.random() * 5)
+
+        const resultElm = document.getElementById('result')
+        resultElm.innerHTML = LUCKS[resultNum]
+
+        const resultImageElm = document.getElementById('resultImage')
+        resultImageElm.src = IMAGES[resultNum]
+    </script>
+</body>
+
+</html>
